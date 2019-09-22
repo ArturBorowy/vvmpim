@@ -6,4 +6,10 @@
     <string name="form_name__hint__first_name">First name</string>
     <string name="form_name__hint__middle_name">Middle name</string>
     <string name="form_name__hint__last_name">Last name</string>
+
+    <string name="form_address__hint__city">City</string>
+    <string name="form_address__hint__postal_code">Postal code</string>
+    <string name="form_address__hint__street">Street</string>
+    <string name="form_address__hint__building_no">Building no</string>
+    <string name="form_address__hint__apartment_no">Apartment no</string>
 </resources>
