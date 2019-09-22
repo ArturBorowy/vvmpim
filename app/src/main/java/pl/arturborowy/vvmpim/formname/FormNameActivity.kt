@@ -2,7 +2,7 @@ package pl.arturborowy.vvmpim.formname
 
 import org.koin.android.ext.android.get
 import pl.arturborowy.vvmpim.R
-import pl.arturborowy.vvmpim.base.DataBindingActivity
+import pl.arturborowy.vvmpim.global.base.DataBindingActivity
 
 class FormNameActivity : DataBindingActivity() {
     override val layoutResId = R.layout.activity_form_name

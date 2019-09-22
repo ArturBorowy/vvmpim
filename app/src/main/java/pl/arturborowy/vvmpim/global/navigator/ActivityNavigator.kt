@@ -1,4 +1,4 @@
-package pl.arturborowy.vvmpim
+package pl.arturborowy.vvmpim.global.navigator
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package pl.arturborowy.vvmpim.base
+package pl.arturborowy.vvmpim.global.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

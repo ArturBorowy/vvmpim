@@ -1,7 +1,7 @@
 package pl.arturborowy.vvmpim.formname
 
 import androidx.databinding.Bindable
-import pl.arturborowy.vvmpim.base.PojoViewModel
+import pl.arturborowy.vvmpim.global.base.PojoViewModel
 
 class FormNameViewModel : PojoViewModel {
 

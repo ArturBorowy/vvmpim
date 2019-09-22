@@ -1,6 +1,6 @@
 package pl.arturborowy.vvmpim.formname
 
-import pl.arturborowy.vvmpim.Navigator
+import pl.arturborowy.vvmpim.global.navigator.Navigator
 
 class FormNamePresenter(private val formNameViewModel: FormNameViewModel,
                         private val nameInteractor: NameInteractor,

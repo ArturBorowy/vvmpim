@@ -1,8 +1,10 @@
-package pl.arturborowy.vvmpim
+package pl.arturborowy.vvmpim.global.di
 
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import pl.arturborowy.vvmpim.formname.*
+import pl.arturborowy.vvmpim.global.navigator.ActivityNavigator
+import pl.arturborowy.vvmpim.global.navigator.Navigator
 
 val DI_MODULE = module {
     single { FormNameViewModel() }
