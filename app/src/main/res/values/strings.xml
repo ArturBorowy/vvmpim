@@ -12,4 +12,7 @@
     <string name="form_address__hint__street">Street</string>
     <string name="form_address__hint__building_no">Building no</string>
     <string name="form_address__hint__apartment_no">Apartment no</string>
+
+    <string name="form_contact__hint__phone">Phone</string>
+    <string name="form_email__hint__email">E-mail</string>
 </resources>

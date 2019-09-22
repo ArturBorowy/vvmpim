@@ -5,11 +5,11 @@
 
         <variable
             name="viewModel"
-            type="pl.arturborowy.vvmpim.form.name.FormNameViewModel" />
+            type="pl.arturborowy.vvmpim.form.contact.FormContactViewModel" />
 
         <variable
             name="uiEventHandler"
-            type="pl.arturborowy.vvmpim.form.name.FormNameUiEventHandler" />
+            type="pl.arturborowy.vvmpim.form.contact.FormContactUiEventHandler" />
     </data>
 
     <LinearLayout
@@ -22,22 +22,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/form_name__hint__first_name"
-            android:text="@{viewModel.firstName}" />
+            android:hint="@string/form_email__hint__email"
+            android:text="@{viewModel.email}" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/form_name__hint__middle_name"
-            android:text="@{viewModel.middleName}" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/form_name__hint__last_name"
-            android:text="@{viewModel.lastName}" />
+            android:hint="@string/form_contact__hint__phone"
+            android:text="@{viewModel.phoneNo}" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"

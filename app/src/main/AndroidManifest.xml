@@ -21,6 +21,8 @@
 
         <activity android:name=".form.address.FormAddressActivity" />
 
+        <activity android:name=".form.contact.FormContactActivity" />
+
     </application>
 
 </manifest>

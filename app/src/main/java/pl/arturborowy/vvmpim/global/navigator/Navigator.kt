@@ -5,4 +5,6 @@ interface Navigator {
     fun goToFormName()
 
     fun goToFormAddress()
+
+    fun goToFormContact()
 }

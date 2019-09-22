@@ -5,6 +5,9 @@ import org.koin.dsl.module
 import pl.arturborowy.vvmpim.form.address.FormAddressPresenter
 import pl.arturborowy.vvmpim.form.address.FormAddressUiEventHandler
 import pl.arturborowy.vvmpim.form.address.FormAddressViewModel
+import pl.arturborowy.vvmpim.form.contact.FormContactPresenter
+import pl.arturborowy.vvmpim.form.contact.FormContactUiEventHandler
+import pl.arturborowy.vvmpim.form.contact.FormContactViewModel
 import pl.arturborowy.vvmpim.form.name.*
 import pl.arturborowy.vvmpim.global.navigator.ActivityNavigator
 import pl.arturborowy.vvmpim.global.navigator.Navigator
@@ -19,5 +22,8 @@ val DI_MODULE = module {
     single<Navigator> { ActivityNavigator(androidContext()) }
 
     single { FormAddressViewModel() }
-    single<FormAddressUiEventHandler> { FormAddressPresenter() }
+    single<FormAddressUiEventHandler> { FormAddressPresenter(get()) }
+
+    single { FormContactViewModel() }
+    single<FormContactUiEventHandler> { FormContactPresenter() }
 }
