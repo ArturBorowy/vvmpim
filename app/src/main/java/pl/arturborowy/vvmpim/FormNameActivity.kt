@@ -10,7 +10,7 @@ class MainActivity : DataBindingActivity() {
 
     override val viewModel = MainViewModel()
 
-    override val uiEventHandler = MainPresenter(viewModel, MainInteractor(MainRepository()))
+    override val uiEventHandler = MainPresenter(viewModel, MainInteractor(MainRepository()), ActivityNavigator(this))
 }
 
 class MainViewModel : PojoViewModel {
@@ -27,7 +27,8 @@ class MainViewModel : PojoViewModel {
 }
 
 class MainPresenter(private val mainViewModel: MainViewModel,
-                    private val mainInteractor: MainInteractor) : FormNameUiEventHandler {
+                    private val mainInteractor: MainInteractor,
+                    private val navigator: Navigator) : FormNameUiEventHandler {
 
     init {
         mainViewModel.firstName = mainInteractor.text
@@ -36,7 +37,7 @@ class MainPresenter(private val mainViewModel: MainViewModel,
     }
 
     override fun onNextBtnClick() {
-
+        navigator.goToFormAddress()
     }
 }
 
