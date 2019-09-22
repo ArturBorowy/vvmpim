@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">vvmpim</string>
+
+    <string name="form__btn__next">NEXT</string>
+
+    <string name="form_name__hint__first_name">First name</string>
+    <string name="form_name__hint__middle_name">Middle name</string>
+    <string name="form_name__hint__last_name">Last name</string>
 </resources>
