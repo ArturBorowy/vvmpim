@@ -1,4 +1,4 @@
-package pl.arturborowy.vvmpim.formname
+package pl.arturborowy.vvmpim.form.name
 
 import pl.arturborowy.vvmpim.global.navigator.Navigator
 

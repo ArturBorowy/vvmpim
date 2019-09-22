@@ -1,4 +1,4 @@
-package pl.arturborowy.vvmpim.formname
+package pl.arturborowy.vvmpim.form.name
 
 import org.koin.android.ext.android.get
 import pl.arturborowy.vvmpim.R

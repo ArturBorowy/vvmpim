@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import pl.arturborowy.vvmpim.form.address.FormAddressActivity
-import pl.arturborowy.vvmpim.formname.FormNameActivity
+import pl.arturborowy.vvmpim.form.name.FormNameActivity
 
 class ActivityNavigator(private val context: Context) : Navigator {
 

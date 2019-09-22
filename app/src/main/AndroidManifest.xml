@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".formname.FormNameActivity">
+        <activity android:name="pl.arturborowy.vvmpim.form.name.FormNameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

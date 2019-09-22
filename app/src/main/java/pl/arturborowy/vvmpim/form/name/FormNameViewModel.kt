@@ -1,4 +1,4 @@
-package pl.arturborowy.vvmpim.formname
+package pl.arturborowy.vvmpim.form.name
 
 import androidx.databinding.Bindable
 import pl.arturborowy.vvmpim.global.base.PojoViewModel

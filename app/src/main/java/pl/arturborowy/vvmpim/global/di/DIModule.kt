@@ -5,7 +5,7 @@ import org.koin.dsl.module
 import pl.arturborowy.vvmpim.form.address.FormAddressPresenter
 import pl.arturborowy.vvmpim.form.address.FormAddressUiEventHandler
 import pl.arturborowy.vvmpim.form.address.FormAddressViewModel
-import pl.arturborowy.vvmpim.formname.*
+import pl.arturborowy.vvmpim.form.name.*
 import pl.arturborowy.vvmpim.global.navigator.ActivityNavigator
 import pl.arturborowy.vvmpim.global.navigator.Navigator
 
