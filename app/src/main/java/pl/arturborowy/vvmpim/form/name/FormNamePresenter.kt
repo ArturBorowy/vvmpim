@@ -1,5 +1,6 @@
 package pl.arturborowy.vvmpim.form.name
 
+import kotlinx.coroutines.runBlocking
 import pl.arturborowy.vvmpim.global.navigator.Navigator
 
 class FormNamePresenter(private val formNameViewModel: FormNameViewModel,
@@ -7,9 +8,11 @@ class FormNamePresenter(private val formNameViewModel: FormNameViewModel,
                         private val navigator: Navigator) : FormNameUiEventHandler {
 
     init {
-        formNameViewModel.firstName = nameInteractor.text
-        formNameViewModel.middleName = nameInteractor.text
-        formNameViewModel.lastName = nameInteractor.text
+        runBlocking {
+            formNameViewModel.firstName = nameInteractor.getUserFirstName()
+            formNameViewModel.middleName = nameInteractor.getUserMiddleName()
+            formNameViewModel.lastName = nameInteractor.getUserLastName()
+        }
     }
 
     override fun onNextBtnClick() {
