@@ -5,11 +5,11 @@
 
         <variable
             name="viewModel"
-            type="pl.arturborowy.vvmpim.MainViewModel" />
+            type="pl.arturborowy.vvmpim.formname.FormNameViewModel" />
 
         <variable
             name="uiEventHandler"
-            type="pl.arturborowy.vvmpim.FormNameUiEventHandler" />
+            type="pl.arturborowy.vvmpim.formname.FormNameUiEventHandler" />
     </data>
 
     <LinearLayout
