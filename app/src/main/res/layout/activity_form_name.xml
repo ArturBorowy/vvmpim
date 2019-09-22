@@ -4,8 +4,12 @@
     <data>
 
         <variable
-            name="vm"
+            name="viewModel"
             type="pl.arturborowy.vvmpim.MainViewModel" />
+
+        <variable
+            name="uiEventHandler"
+            type="pl.arturborowy.vvmpim.FormNameUiEventHandler" />
     </data>
 
     <LinearLayout
@@ -19,25 +23,26 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__first_name"
-            android:text="@{vm.firstName}" />
+            android:text="@{viewModel.firstName}" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__middle_name"
-            android:text="@{vm.middleName}" />
+            android:text="@{viewModel.middleName}" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__last_name"
-            android:text="@{vm.lastName}" />
+            android:text="@{viewModel.lastName}" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{ () -> uiEventHandler.onNextBtnClick()}"
             android:text="@string/form__btn__next" />
 
     </LinearLayout>

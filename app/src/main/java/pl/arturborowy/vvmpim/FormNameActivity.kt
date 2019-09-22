@@ -1,25 +1,19 @@
 package pl.arturborowy.vvmpim
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.Bindable
-import androidx.databinding.DataBindingUtil
-import pl.arturborowy.vvmpim.databinding.ActivityFormNameBinding
+import pl.arturborowy.vvmpim.base.DataBindingActivity
+import pl.arturborowy.vvmpim.base.PojoViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DataBindingActivity() {
 
-    private val viewModel = MainViewModel()
-    private val presenter = MainPresenter(viewModel, MainInteractor(MainRepository()))
+    override val layoutResId = R.layout.activity_form_name
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityFormNameBinding>(this, R.layout.activity_form_name)
+    override val viewModel = MainViewModel()
 
-        binding.vm = viewModel
-    }
+    override val uiEventHandler = MainPresenter(viewModel, MainInteractor(MainRepository()))
 }
 
-class MainViewModel {
+class MainViewModel : PojoViewModel {
 
     @Bindable
     var firstName: String? = null
@@ -33,12 +27,16 @@ class MainViewModel {
 }
 
 class MainPresenter(private val mainViewModel: MainViewModel,
-                    private val mainInteractor: MainInteractor) {
+                    private val mainInteractor: MainInteractor) : FormNameUiEventHandler {
 
     init {
         mainViewModel.firstName = mainInteractor.text
         mainViewModel.middleName = mainInteractor.text
         mainViewModel.lastName = mainInteractor.text
+    }
+
+    override fun onNextBtnClick() {
+
     }
 }
 
