@@ -4,25 +4,58 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
 class UserDataRepository : NameRepository, AddressRepository, ContactRepository {
-    override suspend fun getEmail() = delayReturn(text)
 
-    override suspend fun getPhone() = delayReturn(number)
+    private var email: String = ""
 
-    override suspend fun getCity() = delayReturn(text)
+    private var phone: Int = 0
 
-    override suspend fun getStreet() = delayReturn(text)
+    private var city: String = ""
 
-    override suspend fun getPostalCode() = delayReturn(text)
+    private var street: String = ""
 
-    override suspend fun getBuildingNo() = delayReturn(number)
+    private var postalCode: String = ""
 
-    override suspend fun getApartmentNo() = delayReturn(number)
+    private var buildingNo: Int = 0
 
-    override suspend fun getFirstName() = delayReturn(text)
+    private var apartmentNo: Int = 0
 
-    override suspend fun getMiddleName() = delayReturn(text)
+    private var firstName: String = ""
 
-    override suspend fun getLastName() = delayReturn(text)
+    private var middleName: String = ""
+
+    private var lastName: String = ""
+
+    override suspend fun getEmail() = delayReturn(email)
+
+    override suspend fun getPhone() = delayReturn(phone)
+
+    override suspend fun getCity() = delayReturn(city)
+
+    override suspend fun getStreet() = delayReturn(street)
+
+    override suspend fun getPostalCode() = delayReturn(postalCode)
+
+    override suspend fun getBuildingNo() = delayReturn(buildingNo)
+
+    override suspend fun getApartmentNo() = delayReturn(apartmentNo)
+
+    override suspend fun getFirstName() = delayReturn(firstName)
+
+    override suspend fun getMiddleName() = delayReturn(middleName)
+
+    override suspend fun getLastName() = delayReturn(lastName)
+
+    override suspend fun setFirstName(firstName: String) {
+        this.firstName = firstName
+    }
+
+    override suspend fun setMiddleName(middleName: String) {
+        this.middleName = middleName
+    }
+
+    override suspend fun setLastName(lastName: String) {
+        this.lastName = lastName
+    }
 
     private suspend fun <ReturnT> delayReturn(valueToReturn: ReturnT, delayMillis: Long = 1000) =
         runBlocking {
