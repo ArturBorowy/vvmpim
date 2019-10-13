@@ -25,6 +25,14 @@ class UserDataRepository : NameRepository, AddressRepository, ContactRepository 
 
     private var lastName: String = ""
 
+    override suspend fun setEmail(email: String) {
+        this.email = email
+    }
+
+    override suspend fun setPhone(phone: Int) {
+        this.phone = phone
+    }
+
     override suspend fun getEmail() = delayReturn(email)
 
     override suspend fun getPhone() = delayReturn(phone)
@@ -62,8 +70,4 @@ class UserDataRepository : NameRepository, AddressRepository, ContactRepository 
             delay(delayMillis)
             valueToReturn
         }
-
-    private val text = "REPO TEXT!"
-
-    private val number = 123
 }

@@ -2,11 +2,13 @@ package pl.arturborowy.vvmpim.global.di
 
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
+import pl.arturborowy.vvmpim.data.ContactRepository
 import pl.arturborowy.vvmpim.data.NameRepository
 import pl.arturborowy.vvmpim.data.UserDataRepository
 import pl.arturborowy.vvmpim.form.address.FormAddressPresenter
 import pl.arturborowy.vvmpim.form.address.FormAddressUiEventHandler
 import pl.arturborowy.vvmpim.form.address.FormAddressViewModel
+import pl.arturborowy.vvmpim.form.contact.ContactInteractor
 import pl.arturborowy.vvmpim.form.contact.FormContactPresenter
 import pl.arturborowy.vvmpim.form.contact.FormContactUiEventHandler
 import pl.arturborowy.vvmpim.form.contact.FormContactViewModel
@@ -26,6 +28,9 @@ val DI_MODULE = module {
     single { FormAddressViewModel() }
     single<FormAddressUiEventHandler> { FormAddressPresenter(get()) }
 
+    single { ContactInteractor(get()) }
+    single<ContactRepository> { UserDataRepository() }
+
     single { FormContactViewModel() }
-    single<FormContactUiEventHandler> { FormContactPresenter() }
+    single<FormContactUiEventHandler> { FormContactPresenter(get(), get(), get()) }
 }
