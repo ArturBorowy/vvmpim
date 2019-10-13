@@ -26,11 +26,11 @@ class UserDataRepository : NameRepository, AddressRepository, ContactRepository 
     private var lastName: String = ""
 
     override suspend fun setEmail(email: String) {
-        this.email = email
+        delayRun({ this.email = email })
     }
 
     override suspend fun setPhone(phone: Int) {
-        this.phone = phone
+        delayRun({ this.phone = phone })
     }
 
     override suspend fun getEmail() = delayReturn(email)
@@ -47,6 +47,26 @@ class UserDataRepository : NameRepository, AddressRepository, ContactRepository 
 
     override suspend fun getApartmentNo() = delayReturn(apartmentNo)
 
+    override suspend fun setCity(city: String) {
+        delayRun({ this.city = city })
+    }
+
+    override suspend fun setStreet(street: String) {
+        delayRun({ this.street = street })
+    }
+
+    override suspend fun setPostalCode(postalCode: String) {
+        delayRun({ this.postalCode = postalCode })
+    }
+
+    override suspend fun setBuildingNo(buildingNo: Int) {
+        delayRun({ this.buildingNo = buildingNo })
+    }
+
+    override suspend fun setApartmentNo(apartmentNo: Int) {
+        delayRun({ this.apartmentNo = apartmentNo })
+    }
+
     override suspend fun getFirstName() = delayReturn(firstName)
 
     override suspend fun getMiddleName() = delayReturn(middleName)
@@ -54,20 +74,23 @@ class UserDataRepository : NameRepository, AddressRepository, ContactRepository 
     override suspend fun getLastName() = delayReturn(lastName)
 
     override suspend fun setFirstName(firstName: String) {
-        this.firstName = firstName
+        delayRun({ this.firstName = firstName })
     }
 
     override suspend fun setMiddleName(middleName: String) {
-        this.middleName = middleName
+        delayRun({ this.middleName = middleName })
     }
 
     override suspend fun setLastName(lastName: String) {
-        this.lastName = lastName
+        delayRun({ this.lastName = lastName })
     }
 
     private suspend fun <ReturnT> delayReturn(valueToReturn: ReturnT, delayMillis: Long = 1000) =
+        delayRun({ valueToReturn }, delayMillis)
+
+    private suspend fun <ReturnT> delayRun(block: () -> ReturnT, delayMillis: Long = 1000) =
         runBlocking {
             delay(delayMillis)
-            valueToReturn
+            block()
         }
 }

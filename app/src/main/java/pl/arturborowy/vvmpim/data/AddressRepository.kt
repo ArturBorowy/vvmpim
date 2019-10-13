@@ -11,4 +11,14 @@ interface AddressRepository {
     suspend fun getBuildingNo(): Int
 
     suspend fun getApartmentNo(): Int
+
+    suspend fun setCity(city: String)
+
+    suspend fun setStreet(street: String)
+
+    suspend fun setPostalCode(postalCode: String)
+
+    suspend fun setBuildingNo(buildingNo: Int)
+
+    suspend fun setApartmentNo(apartmentNo: Int)
 }
