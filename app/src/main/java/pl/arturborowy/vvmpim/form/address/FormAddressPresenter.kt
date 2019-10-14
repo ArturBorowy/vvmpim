@@ -10,6 +10,8 @@ class FormAddressPresenter(
 ) : FormAddressUiEventHandler {
 
     init {
+        addressViewModel.loadingVisible = true
+
         runBlocking {
             addressViewModel.street = addressInteractor.getStreet()
             addressViewModel.apartmentNo = addressInteractor.getApartmentNo().toString()
@@ -17,9 +19,13 @@ class FormAddressPresenter(
             addressViewModel.city = addressInteractor.getCity()
             addressViewModel.postalCode = addressInteractor.getPostalCode()
         }
+
+        addressViewModel.loadingVisible = false
     }
 
     override fun onNextBtnClick() {
+        addressViewModel.loadingVisible = true
+
         runBlocking {
             addressViewModel.street?.let { addressInteractor.setStreet(it) }
             addressViewModel.apartmentNo?.toInt()?.let { addressInteractor.setApartmentNo(it) }
@@ -27,6 +33,8 @@ class FormAddressPresenter(
             addressViewModel.city?.let { addressInteractor.setCity(it) }
             addressViewModel.postalCode?.let { addressInteractor.setPostalCode(it) }
         }
+
+        addressViewModel.loadingVisible = false
 
         navigator.goToFormContact()
     }

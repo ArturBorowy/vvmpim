@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="pl.arturborowy.vvmpim.form.name.FormNameActivity">
+        <activity
+            android:name="pl.arturborowy.vvmpim.form.name.FormNameActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +21,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".form.address.FormAddressActivity" />
+        <activity
+            android:name=".form.address.FormAddressActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".form.contact.FormContactActivity" />
+        <activity
+            android:name=".form.contact.FormContactActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

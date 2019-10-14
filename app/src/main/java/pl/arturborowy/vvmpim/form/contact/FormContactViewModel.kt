@@ -10,4 +10,7 @@ class FormContactViewModel : PojoViewModel {
 
     @Bindable
     var phoneNo: String? = null
+
+    @Bindable
+    var loadingVisible: Boolean = false
 }

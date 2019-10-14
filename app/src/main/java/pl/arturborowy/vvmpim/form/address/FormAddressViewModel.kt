@@ -15,4 +15,7 @@ class FormAddressViewModel : PojoViewModel {
     var buildingNo: String? = null
     @Bindable
     var apartmentNo: String? = null
+
+    @Bindable
+    var loadingVisible: Boolean = false
 }

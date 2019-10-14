@@ -14,4 +14,7 @@ class FormNameViewModel : PojoViewModel {
     @Bindable
     var lastName: String? = null
 
+    @Bindable
+    var loadingVisible: Boolean = false
+
 }
