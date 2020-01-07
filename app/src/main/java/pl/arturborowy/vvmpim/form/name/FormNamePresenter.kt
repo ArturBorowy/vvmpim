@@ -4,24 +4,24 @@ import kotlinx.coroutines.runBlocking
 import pl.arturborowy.vvmpim.global.navigator.Navigator
 
 class FormNamePresenter(
-    private val formNameViewModel: FormNameViewModel,
-    private val nameInteractor: NameInteractor,
-    private val navigator: Navigator
+        private val formNameViewModel: FormNameViewModel,
+        private val nameInteractor: NameInteractor,
+        private val navigator: Navigator
 ) : FormNameUiEventHandler {
 
     init {
         runBlocking {
-            formNameViewModel.firstName = nameInteractor.getUserFirstName()
-            formNameViewModel.middleName = nameInteractor.getUserMiddleName()
-            formNameViewModel.lastName = nameInteractor.getUserLastName()
+            formNameViewModel.firstName.set(nameInteractor.getUserFirstName())
+            formNameViewModel.middleName.set(nameInteractor.getUserMiddleName())
+            formNameViewModel.lastName.set(nameInteractor.getUserLastName())
         }
     }
 
     override fun onNextBtnClick() {
         runBlocking {
-            formNameViewModel.firstName?.let { nameInteractor.setUserFirstName(it) }
-            formNameViewModel.middleName?.let { nameInteractor.setUserMiddleName(it) }
-            formNameViewModel.lastName?.let { nameInteractor.setUserLastName(it) }
+            formNameViewModel.firstName.value?.let { nameInteractor.setUserFirstName(it) }
+            formNameViewModel.middleName.value?.let { nameInteractor.setUserMiddleName(it) }
+            formNameViewModel.lastName.value?.let { nameInteractor.setUserLastName(it) }
         }
 
         navigator.goToFormAddress()

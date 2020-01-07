@@ -19,7 +19,7 @@ import pl.arturborowy.vvmpim.global.navigator.ActivityNavigator
 import pl.arturborowy.vvmpim.global.navigator.Navigator
 
 val DI_MODULE = module {
-    single { FormNameViewModel() }
+    single<FormNameViewModel> { FormNameObservableFieldViewModel() }
     single<FormNameUiEventHandler> { FormNamePresenter(get(), get(), get()) }
 
     single { NameInteractor(get()) }

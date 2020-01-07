@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="pl.arturborowy.vvmpim.form.name.FormNameViewModel" />
+            type="pl.arturborowy.vvmpim.form.name.FormNameObservableFieldViewModel" />
 
         <variable
             name="uiEventHandler"
@@ -24,21 +24,21 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__first_name"
-            android:text="@{viewModel.firstName}" />
+            android:text="@{viewModel.firstName.value}" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__middle_name"
-            android:text="@{viewModel.middleName}" />
+            android:text="@{viewModel.middleName.value}" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="@string/form_name__hint__last_name"
-            android:text="@{viewModel.lastName}" />
+            android:text="@{viewModel.lastName.value}" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
@@ -49,8 +49,7 @@
 
         <ProgressBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:visibleOrGone="@{viewModel.loadingVisible}" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

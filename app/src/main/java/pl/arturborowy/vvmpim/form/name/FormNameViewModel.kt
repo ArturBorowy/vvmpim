@@ -1,20 +1,12 @@
 package pl.arturborowy.vvmpim.form.name
 
-import androidx.databinding.Bindable
 import pl.arturborowy.vvmpim.global.base.PojoViewModel
+import pl.arturborowy.vvmpim.util.IObservableField
 
-class FormNameViewModel : PojoViewModel {
+interface FormNameViewModel : PojoViewModel {
 
-    @Bindable
-    var firstName: String? = null
-
-    @Bindable
-    var middleName: String? = null
-
-    @Bindable
-    var lastName: String? = null
-
-    @Bindable
-    var loadingVisible: Boolean = false
-
+    val firstName: IObservableField<String>
+    val middleName: IObservableField<String>
+    val lastName: IObservableField<String>
+    val loadingVisible: IObservableField<Boolean>
 }
